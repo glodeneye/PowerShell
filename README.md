@@ -9,50 +9,16 @@ A collection of useful PowerShell scripts for system administration, security au
 ## 👤 Author
 
 **Tim Golden**
-- GitHub: [@goldeneye](https://github.com/goldeneye)
-- Website: [timgolden.com](https://timgolden.com)
+- 🌐 Website: [timgolden.com](https://timgolden.com)
+- 📝 Blog: [timgolden.com/blog](https://timgolden.com/blog/)
+- 💼 LinkedIn: [Timothy Golden](https://www.linkedin.com/in/timothygolden/)
+- 🎥 YouTube: [@TimGoldenEye](https://www.youtube.com/@TimGoldenEye)
+- 🔧 GitHub: [@goldeneye](https://github.com/goldeneye)
+- 💬 Reddit: [u/goldeneyenh](https://www.reddit.com/user/goldeneyenh/)
 
 ---
 
 ## 📚 Scripts in This Repository
-
-### 🔐 Security & Vulnerability Management
-
-#### [Microsoft Outlook Vulnerability Scanner (CVE-2023-23397)](./CVE-2023-23397-Scanner)
-
-Scans for the critical Outlook elevation of privilege vulnerability (CVE-2023-23397) that allows attackers to steal NTLM hashes without user interaction.
-
-**Features:**
-- Detects vulnerable Outlook versions (32-bit and 64-bit)
-- Automated update deployment via OfficeC2RClient
-- Interactive and silent mode support
-- Enterprise-ready for mass deployment
-- Compliance and audit reporting
-
-**Use Case:** Security teams need to quickly identify and remediate this actively exploited critical vulnerability across their organization.
-
-[📖 View Full Documentation](./CVE-2023-23397-Scanner)
-
----
-
-### 💻 System Configuration
-
-#### [Disable-Enable AutoRun](./Disable-Enable-AutoRun)
-
-Manages Windows AutoRun settings to prevent malware execution from removable media and network drives.
-
-**Features:**
-- Enable/disable AutoRun for all drive types
-- Registry-based configuration
-- Security hardening compliance (CIS, NIST)
-- Audit current AutoRun settings
-- Enterprise deployment support
-
-**Use Case:** IT administrators implementing security policies to prevent AutoRun-based malware infections from USB drives and removable media.
-
-[📖 View Full Documentation](./Disable-Enable-AutoRun)
-
----
 
 ### ☁️ Microsoft 365 & OneDrive Management
 
@@ -86,6 +52,44 @@ Install-Module Microsoft.Graph.Authentication -Scope CurrentUser
 # Custom output directory
 .\Get-OneDriveSharedItems.ps1 -OutputDirectory "D:\Reports"
 ```
+
+---
+
+### 💻 System Configuration
+
+#### [Disable-Enable AutoRun](./Disable-Enable-AutoRun)
+
+Manages Windows AutoRun settings to prevent malware execution from removable media and network drives.
+
+**Features:**
+- Enable/disable AutoRun for all drive types
+- Registry-based configuration
+- Security hardening compliance (CIS, NIST)
+- Audit current AutoRun settings
+- Enterprise deployment support
+
+**Use Case:** IT administrators implementing security policies to prevent AutoRun-based malware infections from USB drives and removable media.
+
+[📖 View Full Documentation](./Disable-Enable-AutoRun)
+
+---
+
+### 🔐 Security & Vulnerability Management
+
+#### [Microsoft Outlook Vulnerability Scanner (CVE-2023-23397)](./CVE-2023-23397-Scanner)
+
+Scans for the critical Outlook elevation of privilege vulnerability (CVE-2023-23397) that allows attackers to steal NTLM hashes without user interaction.
+
+**Features:**
+- Detects vulnerable Outlook versions (32-bit and 64-bit)
+- Automated update deployment via OfficeC2RClient
+- Interactive and silent mode support
+- Enterprise-ready for mass deployment
+- Compliance and audit reporting
+
+**Use Case:** Security teams need to quickly identify and remediate this actively exploited critical vulnerability across their organization.
+
+[📖 View Full Documentation](./CVE-2023-23397-Scanner)
 
 ---
 
@@ -144,9 +148,9 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/goldeneye/PowerShell/m
 
 | Script | Category | Requires Admin | External Modules | Output Format | Use Case |
 |--------|----------|----------------|------------------|---------------|----------|
-| **CVE-2023-23397 Scanner** | Security | Yes | None | Console/Report | Vulnerability Assessment |
-| **Disable-Enable AutoRun** | System Config | Yes | None | Registry | Security Hardening |
 | **Get-OneDriveSharedItems** | Cloud/M365 | No | Microsoft.Graph | CSV | Data Governance |
+| **Disable-Enable AutoRun** | System Config | Yes | None | Registry | Security Hardening |
+| **CVE-2023-23397 Scanner** | Security | Yes | None | Console/Report | Vulnerability Assessment |
 
 ---
 
@@ -256,6 +260,9 @@ The author is not responsible for any data loss, system issues, or other problem
 - **Issues**: [GitHub Issues](https://github.com/goldeneye/PowerShell/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/goldeneye/PowerShell/discussions)
 - **Website**: [timgolden.com](https://timgolden.com)
+- **Blog**: [timgolden.com/blog](https://timgolden.com/blog/)
+- **LinkedIn**: [Timothy Golden](https://www.linkedin.com/in/timothygolden/)
+- **YouTube**: [@TimGoldenEye](https://www.youtube.com/@TimGoldenEye)
 
 ---
 
