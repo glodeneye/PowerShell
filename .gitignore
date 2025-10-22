@@ -1,6 +1,9 @@
 # Claude Code local settings
 .claude/
 
+# Environment variables (credentials)
+.env
+
 # PowerShell
 *.ps1xml
 *.psm1.bak
