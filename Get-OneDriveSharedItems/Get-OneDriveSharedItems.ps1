@@ -25,7 +25,9 @@
     .\Get-OneDriveSharedItems.ps1 -OutputDirectory "D:\Reports" -ShowProgress 50
 
 .NOTES
-    Author: Community Script
+    Author: Tim Golden
+    GitHub: https://github.com/goldeneye
+    Website: https://timgolden.com
     Version: 1.0.0
     Requires: Microsoft.Graph.Authentication module
     License: MIT
