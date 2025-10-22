@@ -58,12 +58,12 @@ Install-Module -Name ImportExcel -Scope CurrentUser  # Optional, for Excel repor
 ```powershell
 # Always test first with -WhatIf to see what will happen
 .\Setup-CrossTenantCollaboration.ps1 `
-    -HostTenantDomain "compliancerisk.io" `
-    -GuestTenantDomain "pelican3.net" `
+    -HostTenantDomain "your-company.com" `
+    -GuestTenantDomain "partner-company.com" `
     -SharePointSiteTitle "Client Projects" `
     -SharePointSiteAlias "ClientProjects" `
     -UsersCsvPath ".\users.csv" `
-    -AdminEmail "admin@compliancescorecard.com" `
+    -AdminEmail "admin@your-company.com" `
     -WhatIf
 ```
 
@@ -71,13 +71,13 @@ Install-Module -Name ImportExcel -Scope CurrentUser  # Optional, for Excel repor
 
 ```powershell
 .\Setup-CrossTenantCollaboration.ps1 `
-    -HostTenantDomain "compliancerisk.io" `
-    -GuestTenantDomain "pelican3.net" `
+    -HostTenantDomain "your-company.com" `
+    -GuestTenantDomain "partner-company.com" `
     -SharePointSiteTitle "Client Projects" `
     -SharePointSiteAlias "ClientProjects" `
     -ClientFolders @("Client A", "Client B") `
-    -GuestUserEmails @("user1@pelican3.net") `
-    -AdminEmail "admin@compliancescorecard.com" `
+    -GuestUserEmails @("guest@partner-company.com") `
+    -AdminEmail "admin@your-company.com" `
     -EnableRollback
 ```
 
@@ -85,13 +85,13 @@ Install-Module -Name ImportExcel -Scope CurrentUser  # Optional, for Excel repor
 
 ```powershell
 .\Setup-CrossTenantCollaboration.ps1 `
-    -HostTenantDomain "compliancerisk.io" `
-    -GuestTenantDomain "pelican3.net" `
+    -HostTenantDomain "your-company.com" `
+    -GuestTenantDomain "partner-company.com" `
     -SharePointSiteTitle "Client Projects" `
     -SharePointSiteAlias "ClientProjects" `
     -UsersCsvPath ".\users.csv" `
-    -AdminEmail "admin@compliancescorecard.com" `
-    -NotificationEmail "admin@compliancescorecard.com" `
+    -AdminEmail "admin@your-company.com" `
+    -NotificationEmail "admin@your-company.com" `
     -EnableRollback `
     -GenerateHtmlReport `
     -GenerateExcelReport
@@ -109,12 +109,12 @@ Install-Module -Name ImportExcel -Scope CurrentUser  # Optional, for Excel repor
 3. Run setup:
 ```powershell
 .\Setup-CrossTenantCollaboration.ps1 `
-    -HostTenantDomain "compliancerisk.io" `
-    -GuestTenantDomain "pelican3.net" `
+    -HostTenantDomain "your-company.com" `
+    -GuestTenantDomain "partner-company.com" `
     -SharePointSiteTitle "Client Projects" `
     -SharePointSiteAlias "ClientProjects" `
     -UsersCsvPath ".\my-users.csv" `
-    -AdminEmail "admin@compliancescorecard.com" `
+    -AdminEmail "admin@your-company.com" `
     -EnableRollback
 ```
 
@@ -143,7 +143,7 @@ Enable with `-EnableRollback` flag. Automatically rolls back changes if critical
 ```powershell
 # Script will automatically rollback on errors
 .\Setup-CrossTenantCollaboration.ps1 `
-    -HostTenantDomain "compliancerisk.io" `
+    -HostTenantDomain "your-company.com" `
     ... `
     -EnableRollback
 ```
@@ -174,7 +174,7 @@ Automatically send completion emails with:
 ```powershell
 .\Setup-CrossTenantCollaboration.ps1 `
     ... `
-    -NotificationEmail "team@compliancescorecard.com" `
+    -NotificationEmail "team@your-company.com" `
     -GenerateHtmlReport
 ```
 
@@ -243,9 +243,9 @@ your-repo/
   "ExecutionId": "unique-guid",
   "Timestamp": "2024-10-22T10:30:00Z",
   "Operation": "SiteCreation",
-  "HostTenant": "compliancerisk.io",
-  "GuestTenant": "pelican3.net",
-  "AdminUser": "admin@compliancescorecard.com",
+  "HostTenant": "your-company.com",
+  "GuestTenant": "partner-company.com",
+  "AdminUser": "admin@your-company.com",
   "Details": "Created SharePoint site: Client Projects",
   "Status": "Completed",
   "SiteUrl": "https://..."
@@ -283,12 +283,12 @@ your-repo/
 $clients = @("ACME Corp", "TechStart Inc", "Global Finance")
 
 .\Setup-CrossTenantCollaboration.ps1 `
-    -HostTenantDomain "compliancerisk.io" `
-    -GuestTenantDomain "pelican3.net" `
+    -HostTenantDomain "your-company.com" `
+    -GuestTenantDomain "partner-company.com" `
     -SharePointSiteTitle "Q4 2024 Projects" `
     -SharePointSiteAlias "Q4Projects" `
     -ClientFolders $clients `
-    -AdminEmail "admin@compliancescorecard.com" `
+    -AdminEmail "admin@your-company.com" `
     -EnableRollback `
     -GenerateHtmlReport
 ```
@@ -297,13 +297,13 @@ $clients = @("ACME Corp", "TechStart Inc", "Global Finance")
 ```powershell
 # Use CSV for bulk import
 .\Setup-CrossTenantCollaboration.ps1 `
-    -HostTenantDomain "compliancerisk.io" `
-    -GuestTenantDomain "pelican3.net" `
+    -HostTenantDomain "your-company.com" `
+    -GuestTenantDomain "partner-company.com" `
     -SharePointSiteTitle "Enterprise Collaboration" `
     -SharePointSiteAlias "Enterprise" `
     -UsersCsvPath ".\all-users.csv" `
-    -AdminEmail "admin@compliancescorecard.com" `
-    -NotificationEmail "it-team@compliancescorecard.com" `
+    -AdminEmail "admin@your-company.com" `
+    -NotificationEmail "it-team@your-company.com" `
     -EnableRollback `
     -GenerateExcelReport
 ```
@@ -322,7 +322,7 @@ MIT License - Free to use and modify
 
 ## 👥 Authors
 
-ComplianceRisk.io Team
+[Tim Golden](https://github.com/goldeneye)
 
 ## 🆘 Support
 
@@ -351,4 +351,4 @@ ComplianceRisk.io Team
 
 **Version**: 2.0
 **Last Updated**: October 2024
-**Maintained by**: [ComplianceRisk.io](https://github.com/goldeneye)
+**Maintained by**: [Tim Golden](https://github.com/goldeneye)

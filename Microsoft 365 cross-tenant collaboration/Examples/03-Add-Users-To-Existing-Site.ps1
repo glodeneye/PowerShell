@@ -23,11 +23,11 @@ Write-Host "Step 1: Create CSV with new users only..." -ForegroundColor Cyan
 
 $newUsers = @"
 Email,Tenant,Role,DisplayName,Department,ClientAccess
-newuser1@compliancerisk.io,Host,Member,New User 1,Compliance,"Client A;Client B"
-newuser2@compliancerisk.io,Host,Member,New User 2,Operations,Client A
-contractor1@pelican3.net,Guest,Member,External Contractor,Consulting,Client B
-contractor2@pelican3.net,Guest,Visitor,External Viewer,Analysis,Client A
-manager@pelican3.net,Guest,Owner,External Manager,Management,"Client A;Client B"
+newuser1@your-company.com,Host,Member,New User 1,Compliance,"Client A;Client B"
+newuser2@your-company.com,Host,Member,New User 2,Operations,Client A
+contractor1@partner-company.com,Guest,Member,External Contractor,Consulting,Client B
+contractor2@partner-company.com,Guest,Visitor,External Viewer,Analysis,Client A
+manager@partner-company.com,Guest,Owner,External Manager,Management,"Client A;Client B"
 "@
 
 $newUsers | Out-File ".\Examples\new-users-only.csv" -Encoding UTF8
@@ -50,12 +50,12 @@ Write-Host ""
 # Test with WhatIf
 Write-Host "Testing with WhatIf first..." -ForegroundColor Cyan
 .\Setup-CrossTenantCollaboration.ps1 `
-    -HostTenantDomain "compliancerisk.io" `
-    -GuestTenantDomain "pelican3.net" `
+    -HostTenantDomain "your-company.com" `
+    -GuestTenantDomain "partner-company.com" `
     -SharePointSiteTitle "Client Projects" `
     -SharePointSiteAlias "ClientProjects" `
     -UsersCsvPath ".\Examples\new-users-only.csv" `
-    -AdminEmail "admin@compliancescorecard.com" `
+    -AdminEmail "admin@your-company.com" `
     -SkipB2BConfig `
     -SkipSiteCreation `
     -WhatIf
@@ -66,12 +66,12 @@ $confirm = Read-Host "Add these users for real? (Y/N)"
 
 if ($confirm -eq 'Y' -or $confirm -eq 'y') {
     .\Setup-CrossTenantCollaboration.ps1 `
-        -HostTenantDomain "compliancerisk.io" `
-        -GuestTenantDomain "pelican3.net" `
+        -HostTenantDomain "your-company.com" `
+        -GuestTenantDomain "partner-company.com" `
         -SharePointSiteTitle "Client Projects" `
         -SharePointSiteAlias "ClientProjects" `
         -UsersCsvPath ".\Examples\new-users-only.csv" `
-        -AdminEmail "admin@compliancescorecard.com" `
+        -AdminEmail "admin@your-company.com" `
         -SkipB2BConfig `
         -SkipSiteCreation `
         -GenerateHtmlReport

@@ -20,9 +20,9 @@ This guide will walk you through setting up cross-tenant collaboration between t
 
 Before you begin, gather the following information:
 
-- **Host Tenant Domain**: e.g., `compliancerisk.io`
-- **Guest Tenant Domain**: e.g., `pelican3.net`
-- **Admin Email**: Your Global Administrator email (e.g., `admin@compliancescorecard.com`)
+- **Host Tenant Domain**: e.g., `your-company.com`
+- **Guest Tenant Domain**: e.g., `partner-company.com`
+- **Admin Email**: Your Global Administrator email (e.g., `admin@your-company.com`)
 - **SharePoint Site Name**: Desired site title (e.g., `Client Projects`)
 - **Site Alias**: URL-friendly name (e.g., `ClientProjects`)
 - **Client Names**: List of client folders to create (e.g., `Client A`, `Client B`)
@@ -81,9 +81,9 @@ Open `my-users.csv` in Excel or your favorite editor and fill in your users:
 
 | Email | Tenant | Role | DisplayName | Department | ClientAccess |
 |-------|--------|------|-------------|------------|--------------|
-| admin@compliancerisk.io | Host | Owner | Admin User | IT | |
-| john@compliancerisk.io | Host | Member | John Doe | Compliance | Client A;Client B |
-| jane@pelican3.net | Guest | Member | Jane Smith | Consulting | Client A |
+| admin@your-company.com | Host | Owner | Admin User | IT | |
+| john@your-company.com | Host | Member | John Doe | Compliance | Client A;Client B |
+| jane@partner-company.com | Guest | Member | Jane Smith | Consulting | Client A |
 
 **Column Definitions:**
 - **Email** (Required): User's email address
@@ -103,7 +103,7 @@ If you have just a few users, you can specify them directly:
 
 ```powershell
 $clientFolders = @("Client A", "Client B", "Client C")
-$guestEmails = @("user1@pelican3.net", "user2@pelican3.net")
+$guestEmails = @("user1@partner-company.com", "user2@partner-company.com")
 ```
 
 ---
@@ -118,12 +118,12 @@ $guestEmails = @("user1@pelican3.net", "user2@pelican3.net")
 cd "E:\github\PowerShell\Microsoft 365 cross-tenant collaboration"
 
 .\Setup-CrossTenantCollaboration.ps1 `
-    -HostTenantDomain "compliancerisk.io" `
-    -GuestTenantDomain "pelican3.net" `
+    -HostTenantDomain "your-company.com" `
+    -GuestTenantDomain "partner-company.com" `
     -SharePointSiteTitle "Client Projects" `
     -SharePointSiteAlias "ClientProjects" `
     -UsersCsvPath ".\my-users.csv" `
-    -AdminEmail "admin@compliancescorecard.com" `
+    -AdminEmail "admin@your-company.com" `
     -WhatIf
 ```
 
@@ -132,10 +132,10 @@ cd "E:\github\PowerShell\Microsoft 365 cross-tenant collaboration"
 You'll see output like:
 
 ```
-What if: Performing the operation "Configure cross-tenant access" on target "B2B Policy for pelican3.net (Tenant ID: xxx-xxx-xxx)".
+What if: Performing the operation "Configure cross-tenant access" on target "B2B Policy for partner-company.com (Tenant ID: xxx-xxx-xxx)".
 What if: Performing the operation "Create team site" on target "SharePoint site: Client Projects at https://...".
 What if: Performing the operation "Create folders" on target "Folder structure for client: Client A".
-What if: Performing the operation "Send invitation with role Edit" on target "Guest user: jane@pelican3.net".
+What if: Performing the operation "Send invitation with role Edit" on target "Guest user: jane@partner-company.com".
 ```
 
 ### Step 3: Verify Everything Looks Correct
@@ -157,28 +157,28 @@ Check that:
 
 ```powershell
 .\Setup-CrossTenantCollaboration.ps1 `
-    -HostTenantDomain "compliancerisk.io" `
-    -GuestTenantDomain "pelican3.net" `
+    -HostTenantDomain "your-company.com" `
+    -GuestTenantDomain "partner-company.com" `
     -SharePointSiteTitle "Client Projects" `
     -SharePointSiteAlias "ClientProjects" `
     -UsersCsvPath ".\my-users.csv" `
-    -AdminEmail "admin@compliancescorecard.com"
+    -AdminEmail "admin@your-company.com"
 ```
 
 ### Recommended Execution (With Rollback & Reporting)
 
 ```powershell
 .\Setup-CrossTenantCollaboration.ps1 `
-    -HostTenantDomain "compliancerisk.io" `
-    -GuestTenantDomain "pelican3.net" `
+    -HostTenantDomain "your-company.com" `
+    -GuestTenantDomain "partner-company.com" `
     -SharePointSiteTitle "Client Projects" `
     -SharePointSiteAlias "ClientProjects" `
     -UsersCsvPath ".\my-users.csv" `
-    -AdminEmail "admin@compliancescorecard.com" `
+    -AdminEmail "admin@your-company.com" `
     -EnableRollback `
     -GenerateHtmlReport `
     -GenerateExcelReport `
-    -NotificationEmail "admin@compliancescorecard.com"
+    -NotificationEmail "admin@your-company.com"
 ```
 
 ### What Happens During Execution
@@ -295,7 +295,7 @@ Double-click the HTML report to open in your browser. Review:
 
 1. Navigate to **Azure Active Directory** → **Users** → **All users**
 2. Filter by **User type** = **Guest**
-3. Verify guest users from pelican3.net are listed
+3. Verify guest users from partner-company.com are listed
 4. Check **Invitation state** = **PendingAcceptance** or **Accepted**
 
 ### Step 4: Verify in SharePoint
@@ -461,7 +461,7 @@ Site already exists at https://[tenant].sharepoint.com/sites/ClientProjects
 
 **Error:**
 ```
-Error processing user user@pelican3.net: Invitation failed
+Error processing user user@partner-company.com: Invitation failed
 ```
 
 **Possible Causes & Solutions:**
@@ -492,7 +492,7 @@ Failed to send completion email
 Connect-MgGraph -Scopes "Mail.Send"
 
 # Verify admin email is correct
-Get-MgUser -UserId "admin@compliancescorecard.com"
+Get-MgUser -UserId "admin@your-company.com"
 ```
 
 ### Issue: "Excel report generation failed"

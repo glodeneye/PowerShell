@@ -7,8 +7,8 @@
     a large enterprise with many users and clients using CSV bulk import.
 
 .SCENARIO
-    - Host: ComplianceRisk.io (large consulting firm)
-    - Guest: Pelican3.net (enterprise client)
+    - Host: your-company.com (large consulting firm)
+    - Guest: partner-company.com (enterprise client)
     - Users: 50+ users (managed via CSV)
     - Clients: 15 client folders
     - Features: Full reporting, email notifications, rollback enabled
@@ -48,15 +48,15 @@ $config = @{
         LastUpdated = (Get-Date -Format "yyyy-MM-dd")
     }
     Tenants = @{
-        HostTenantDomain = "compliancerisk.io"
-        GuestTenantDomain = "pelican3.net"
+        HostTenantDomain = "your-company.com"
+        GuestTenantDomain = "partner-company.com"
     }
     SharePoint = @{
         SiteTitle = "Enterprise Client Collaboration"
         SiteAlias = "EnterpriseCollab"
     }
     Users = @{
-        AdminEmail = "admin@compliancescorecard.com"
+        AdminEmail = "admin@your-company.com"
         UsersCsvPath = ".\Examples\enterprise-users.csv"
     }
     Clients = @{
@@ -82,7 +82,7 @@ $config = @{
         LogPath = ".\Logs"
     }
     Notifications = @{
-        NotificationEmail = "it-team@compliancescorecard.com"
+        NotificationEmail = "it-team@your-company.com"
     }
     Features = @{
         EnableRollback = $true

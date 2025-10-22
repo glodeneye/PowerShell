@@ -15,24 +15,24 @@
 ### 3. Dry-Run (ALWAYS DO THIS FIRST!)
 ```powershell
 .\Setup-CrossTenantCollaboration.ps1 `
-    -HostTenantDomain "compliancerisk.io" `
-    -GuestTenantDomain "pelican3.net" `
+    -HostTenantDomain "your-company.com" `
+    -GuestTenantDomain "partner-company.com" `
     -SharePointSiteTitle "Client Projects" `
     -SharePointSiteAlias "ClientProjects" `
     -UsersCsvPath ".\my-users.csv" `
-    -AdminEmail "admin@compliancescorecard.com" `
+    -AdminEmail "admin@your-company.com" `
     -WhatIf
 ```
 
 ### 4. Execute (Production Run)
 ```powershell
 .\Setup-CrossTenantCollaboration.ps1 `
-    -HostTenantDomain "compliancerisk.io" `
-    -GuestTenantDomain "pelican3.net" `
+    -HostTenantDomain "your-company.com" `
+    -GuestTenantDomain "partner-company.com" `
     -SharePointSiteTitle "Client Projects" `
     -SharePointSiteAlias "ClientProjects" `
     -UsersCsvPath ".\my-users.csv" `
-    -AdminEmail "admin@compliancescorecard.com" `
+    -AdminEmail "admin@your-company.com" `
     -EnableRollback `
     -GenerateHtmlReport `
     -GenerateExcelReport
@@ -52,8 +52,8 @@ Copy-Item config.example.json config.json
 
 | Parameter | Required | Example | Notes |
 |-----------|----------|---------|-------|
-| `-HostTenantDomain` | ✅ | `compliancerisk.io` | Your primary tenant |
-| `-GuestTenantDomain` | ✅ | `pelican3.net` | Partner tenant |
+| `-HostTenantDomain` | ✅ | `your-company.com` | Your primary tenant |
+| `-GuestTenantDomain` | ✅ | `partner-company.com` | Partner tenant |
 | `-SharePointSiteTitle` | ✅ | `"Client Projects"` | Display name |
 | `-SharePointSiteAlias` | ✅ | `ClientProjects` | URL part (no spaces) |
 | `-AdminEmail` | ✅ | `admin@domain.com` | Your admin account |
@@ -72,9 +72,9 @@ Copy-Item config.example.json config.json
 
 ```csv
 Email,Tenant,Role,DisplayName,Department,ClientAccess
-admin@compliancerisk.io,Host,Owner,Admin,IT,
-john@compliancerisk.io,Host,Member,John Doe,Compliance,"Client A;Client B"
-jane@pelican3.net,Guest,Member,Jane Smith,Ops,Client A
+admin@your-company.com,Host,Owner,Admin,IT,
+john@your-company.com,Host,Member,John Doe,Compliance,"Client A;Client B"
+jane@partner-company.com,Guest,Member,Jane Smith,Ops,Client A
 ```
 
 **Roles:** `Owner`, `Member`, `Visitor`
@@ -159,13 +159,13 @@ Get-Module -ListAvailable Microsoft.Graph, PnP.PowerShell, ImportExcel
 ### Scenario 1: Quick Test with 2 Users
 ```powershell
 .\Setup-CrossTenantCollaboration.ps1 `
-    -HostTenantDomain "compliancerisk.io" `
-    -GuestTenantDomain "pelican3.net" `
+    -HostTenantDomain "your-company.com" `
+    -GuestTenantDomain "partner-company.com" `
     -SharePointSiteTitle "Test Site" `
     -SharePointSiteAlias "TestSite" `
     -ClientFolders @("Test Client") `
-    -GuestUserEmails @("user@pelican3.net") `
-    -AdminEmail "admin@compliancescorecard.com" `
+    -GuestUserEmails @("user@partner-company.com") `
+    -AdminEmail "admin@your-company.com" `
     -WhatIf
 ```
 
@@ -182,24 +182,24 @@ Copy-Item config.example.json config.json
 ### Scenario 3: Re-run Without B2B Config
 ```powershell
 .\Setup-CrossTenantCollaboration.ps1 `
-    -HostTenantDomain "compliancerisk.io" `
-    -GuestTenantDomain "pelican3.net" `
+    -HostTenantDomain "your-company.com" `
+    -GuestTenantDomain "partner-company.com" `
     -SharePointSiteTitle "Projects" `
     -SharePointSiteAlias "Projects" `
     -UsersCsvPath ".\users.csv" `
-    -AdminEmail "admin@compliancescorecard.com" `
+    -AdminEmail "admin@your-company.com" `
     -SkipB2BConfig
 ```
 
 ### Scenario 4: Just Add Users (Site Exists)
 ```powershell
 .\Setup-CrossTenantCollaboration.ps1 `
-    -HostTenantDomain "compliancerisk.io" `
-    -GuestTenantDomain "pelican3.net" `
+    -HostTenantDomain "your-company.com" `
+    -GuestTenantDomain "partner-company.com" `
     -SharePointSiteTitle "Existing Site" `
     -SharePointSiteAlias "ExistingSite" `
     -UsersCsvPath ".\new-users.csv" `
-    -AdminEmail "admin@compliancescorecard.com" `
+    -AdminEmail "admin@your-company.com" `
     -SkipB2BConfig `
     -SkipSiteCreation
 ```

@@ -215,4 +215,4 @@ Future enhancements under consideration:
 **Version:** 2.0.0
 **Release Date:** October 22, 2024
 **License:** MIT
-**Maintained by:** ComplianceRisk.io ([GitHub](https://github.com/goldeneye))
+**Maintained by:** [Tim Golden](https://github.com/goldeneye)
