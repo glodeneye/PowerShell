@@ -13,7 +13,7 @@ A collection of useful PowerShell scripts for system administration, security au
 - 📝 Blog: [timgolden.com/blog](https://timgolden.com/blog/)
 - 💼 LinkedIn: [Timothy Golden](https://www.linkedin.com/in/timothygolden/)
 - 🎥 YouTube: [@TimGoldenEye](https://www.youtube.com/@TimGoldenEye)
-- 🔧 GitHub: [@glodeneye](https://github.com/glodeneye)
+- 🔧 GitHub: [@goldeneye](https://github.com/goldeneye)
 - 💬 Reddit: [u/goldeneyenh](https://www.reddit.com/user/goldeneyenh/)
 
 ---
@@ -129,7 +129,7 @@ powershell.exe -ExecutionPolicy Bypass -File .\ScriptName.ps1
 ### Clone Repository
 
 ```powershell
-git clone https://github.com/glodeneye/PowerShell.git
+git clone https://github.com/goldeneye/PowerShell.git
 cd PowerShell
 ```
 
@@ -139,7 +139,7 @@ Navigate to the script you need and click "Raw" to download, or use:
 
 ```powershell
 # Example: Download Get-OneDriveSharedItems.ps1
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/glodeneye/PowerShell/main/Get-OneDriveSharedItems/Get-OneDriveSharedItems.ps1" -OutFile "Get-OneDriveSharedItems.ps1"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/goldeneye/PowerShell/main/Get-OneDriveSharedItems/Get-OneDriveSharedItems.ps1" -OutFile "Get-OneDriveSharedItems.ps1"
 ```
 
 ---
@@ -257,8 +257,8 @@ The author is not responsible for any data loss, system issues, or other problem
 
 ## Support & Contact
 
-- **Issues**: [GitHub Issues](https://github.com/glodeneye/PowerShell/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/glodeneye/PowerShell/discussions)
+- **Issues**: [GitHub Issues](https://github.com/goldeneye/PowerShell/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/goldeneye/PowerShell/discussions)
 - **Website**: [timgolden.com](https://timgolden.com)
 - **Blog**: [timgolden.com/blog](https://timgolden.com/blog/)
 - **LinkedIn**: [Timothy Golden](https://www.linkedin.com/in/timothygolden/)
@@ -314,9 +314,9 @@ The author is not responsible for any data loss, system issues, or other problem
 
 ## Statistics
 
-![GitHub stars](https://img.shields.io/github/stars/glodeneye/PowerShell?style=social)
-![GitHub forks](https://img.shields.io/github/forks/glodeneye/PowerShell?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/glodeneye/PowerShell?style=social)
+![GitHub stars](https://img.shields.io/github/stars/goldeneye/PowerShell?style=social)
+![GitHub forks](https://img.shields.io/github/forks/goldeneye/PowerShell?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/goldeneye/PowerShell?style=social)
 
 ---
 
