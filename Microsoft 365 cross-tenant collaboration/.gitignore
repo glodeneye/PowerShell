@@ -1,0 +1,58 @@
+# Logs directory and all log files
+Logs/
+*.log
+*.json
+
+# User data files (contains PII and sensitive information)
+users.csv
+*-users.csv
+my-*.csv
+
+# Configuration files with credentials
+config.json
+*.config.json
+.env
+credentials.json
+
+# Reports (may contain sensitive data)
+*.html
+*.xlsx
+Report_*.html
+Report_*.xlsx
+
+# PowerShell module caches
+PSReadLine/
+.psmodulecache
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Windows thumbnail cache
+Thumbs.db
+ehthumbs.db
+
+# macOS files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Recycle bin
+$RECYCLE.BIN/
+
+# Office temporary files
+~$*
+*.tmp
+
+# Azure/M365 credentials
+*.cred
+*.credential
