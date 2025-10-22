@@ -1,0 +1,20 @@
+# Claude Code local settings
+.claude/
+
+# PowerShell
+*.ps1xml
+*.psm1.bak
+
+# VS Code
+.vscode/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Output files
+*.log
+*.csv
+*.xlsx
+*_output/
+*_reports/
