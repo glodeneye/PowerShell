@@ -1,6 +1,25 @@
 # Microsoft 365 Cross-Tenant Collaboration Setup
 
+[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/goldeneye/PowerShell/releases)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![PowerShell](https://img.shields.io/badge/powershell-7.0+-blue.svg)](https://github.com/PowerShell/PowerShell)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](https://github.com/goldeneye/PowerShell)
+[![Maintained](https://img.shields.io/badge/maintained-yes-brightgreen.svg)](https://github.com/goldeneye/PowerShell/graphs/commit-activity)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/goldeneye/PowerShell/pulls)
+
 Comprehensive automation for B2B collaboration between two Microsoft 365 tenants with advanced features including rollback, reporting, and email notifications.
+
+---
+
+**📊 Quick Stats:**
+- 🎯 **7,500+ lines** of production-ready PowerShell code
+- 📜 **5 core scripts** for complete automation
+- 📚 **35KB+ documentation** with step-by-step guides
+- 💼 **3 real-world examples** for different scenarios
+- 🧪 **WhatIf mode** for safe testing
+- 🔄 **Auto-rollback** on errors
+
+---
 
 ## ✨ Features
 

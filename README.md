@@ -18,6 +18,95 @@ A collection of useful PowerShell scripts for system administration, security au
 
 ---
 
+## ⭐ Featured Project
+
+### 🚀 [Microsoft 365 Cross-Tenant Collaboration Suite](./Microsoft%20365%20cross-tenant%20collaboration)
+
+**NEW!** Complete enterprise automation for B2B collaboration between Microsoft 365 tenants with SharePoint integration, user management, and advanced features.
+
+[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/goldeneye/PowerShell/releases)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![PowerShell](https://img.shields.io/badge/powershell-7.0+-blue.svg)](https://github.com/PowerShell/PowerShell)
+
+**🎯 What It Does:**
+- ✅ Automates Azure AD B2B cross-tenant access configuration
+- ✅ Creates SharePoint team sites with organized folder structures
+- ✅ Manages bulk user import/invitations (host + guest users)
+- ✅ Generates HTML & Excel reports with detailed statistics
+- ✅ Sends email notifications with attachments
+- ✅ Includes automatic rollback on errors
+- ✅ WhatIf dry-run mode for safe testing
+
+**📊 Scale:**
+- 7,500+ lines of production-ready code
+- 5 core automation scripts
+- 3 real-world example scenarios
+- 35KB+ comprehensive documentation
+
+**💼 Perfect For:**
+- Consulting firms managing multiple clients
+- Enterprises with partner collaborations
+- MSPs managing cross-tenant access
+- Teams requiring B2B SharePoint collaboration
+
+**🎯 Use Cases:**
+- **Small Teams** (5-10 users) → 3-5 minutes setup
+- **Medium Deployments** (20+ users) → 8-12 minutes
+- **Enterprise Scale** (50+ users) → 15-25 minutes
+
+**📚 Documentation:**
+- [📖 Getting Started Guide](./Microsoft%20365%20cross-tenant%20collaboration/GETTING-STARTED.md) - Comprehensive walkthrough
+- [⚡ Quick Reference](./Microsoft%20365%20cross-tenant%20collaboration/QUICK-REFERENCE.md) - One-page cheat sheet
+- [📄 Full Documentation](./Microsoft%20365%20cross-tenant%20collaboration/README.md) - Complete feature list
+- [💼 Examples](./Microsoft%20365%20cross-tenant%20collaboration/Examples) - Real-world scenarios
+
+**🚀 Quick Start:**
+```powershell
+# 1. Check prerequisites
+.\Test-Prerequisites.ps1
+
+# 2. Generate user template
+.\New-UserTemplate.ps1 -OutputPath ".\users.csv"
+
+# 3. Test with dry-run (SAFE - no changes made)
+.\Setup-CrossTenantCollaboration.ps1 `
+    -HostTenantDomain "your-company.com" `
+    -GuestTenantDomain "partner-company.com" `
+    -SharePointSiteTitle "Client Projects" `
+    -SharePointSiteAlias "ClientProjects" `
+    -UsersCsvPath ".\users.csv" `
+    -AdminEmail "admin@your-company.com" `
+    -WhatIf
+
+# 4. Execute with rollback protection
+.\Setup-CrossTenantCollaboration.ps1 `
+    -HostTenantDomain "your-company.com" `
+    -GuestTenantDomain "partner-company.com" `
+    -SharePointSiteTitle "Client Projects" `
+    -SharePointSiteAlias "ClientProjects" `
+    -UsersCsvPath ".\users.csv" `
+    -AdminEmail "admin@your-company.com" `
+    -EnableRollback `
+    -GenerateHtmlReport `
+    -GenerateExcelReport
+```
+
+**🎁 Features:**
+- 🔐 MFA-compatible authentication
+- 📝 Comprehensive audit logging (JSON)
+- 🔄 Automatic & manual rollback
+- 📊 HTML & Excel reporting
+- 📧 Email notifications
+- 🧪 WhatIf mode for testing
+- 🔍 Prerequisites validation
+- ⚙️ Config file support
+- 💼 Real-world examples
+- 📚 35KB+ documentation
+
+[🎯 **Get Started Now →**](./Microsoft%20365%20cross-tenant%20collaboration)
+
+---
+
 ## 📚 Scripts in This Repository
 
 ### ☁️ Microsoft 365 & OneDrive Management
