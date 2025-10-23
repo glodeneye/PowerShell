@@ -4,6 +4,10 @@
 # Environment variables (credentials)
 .env
 
+# Local planning files
+TODO.md
+claude-learning.md
+
 # PowerShell
 *.ps1xml
 *.psm1.bak
